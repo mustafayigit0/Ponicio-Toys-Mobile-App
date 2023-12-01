@@ -1,14 +1,15 @@
-[{
-    "urunAdi": "Grande Jeep Siyah","ozellikler": ["Renk: Siyah","Boyutlar: 30x30 cm","Malzeme: Plastik","Üretim Yeri: Türkiye"],
-    "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]
-  },
-  {
-    "urunAdi": "Grande Jeep Siyah","ozellikler": ["Renk: Siyah","Boyutlar: 30x30 cm","Malzeme: Plastik","Üretim Yeri: Türkiye"],
-    "urunFotograflari": ["assets/images/grandesiyah2.jpg"]
-  },
-  {
-    "urunAdi": "Grande Jeep Siyah","ozellikler": ["Renk: Siyah","Boyutlar: 30x30 cm","Malzeme: Plastik","Üretim Yeri: Türkiye"],
-    "urunFotograflari": ["assets/images/grandesiyah3.jpg"]
-  }
-]
+[
+    {
+      "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+      "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]},
+      {
+        "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+        "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]},
+        {
+          "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+          "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]},
+          {
+            "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+            "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]}
+  ]
   

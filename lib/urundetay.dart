@@ -2,18 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
-
 class UrunDetay extends StatelessWidget {
   final String urunAdi;
-  final List<String> urunFotograflari = [
-    'assets/images/about.jpg',
-    'assets/images/about.jpg',
-    'assets/images/about.jpg',
-    'assets/images/about.jpg',
-    // İhtiyacınıza göre fotoğraf URL'lerini ekleyin
-  ];
+  final List<String> urunFotograflari;
+  final List<Map<String, String>> ozellikler; // Tip güncellendi
 
-  UrunDetay({required this.urunAdi, required List<String> ozellikler, required List<String> urunFotograflari});
+  UrunDetay({
+    required this.urunAdi,
+    required this.urunFotograflari,
+    required this.ozellikler,
+  });
+
+  void _showGalleryForSmallImages(BuildContext context, int initialIndex) {
+    showDialog(
+      context: context,
+      builder: (_) => Dialog(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: PhotoViewGallery.builder(
+            itemCount: urunFotograflari.length,
+            builder: (context, index) {
+              return PhotoViewGalleryPageOptions(
+                imageProvider: AssetImage(urunFotograflari[index]),
+                minScale: PhotoViewComputedScale.contained,
+                maxScale: PhotoViewComputedScale.contained * 2,
+              );
+            },
+            backgroundDecoration: BoxDecoration(
+              color: Colors.transparent,
+            ),
+            scrollPhysics: BouncingScrollPhysics(),
+            pageController: PageController(initialPage: initialIndex),
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +60,7 @@ class UrunDetay extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     child: Text(
-                      '$urunAdi',
+                      urunAdi,
                       style: TextStyle(
                         fontSize: 26.0,
                         fontWeight: FontWeight.bold,
@@ -47,56 +72,34 @@ class UrunDetay extends StatelessWidget {
                   SizedBox(height: 8.0),
                   Container(
                     width: double.infinity,
-                    child: Text(
-                      'Özellikleri',
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  SizedBox(height: 4.0),
-                  ListTile(
-                    contentPadding: EdgeInsets.all(
-                        0), // ListTile'lar arasındaki boşluğu azaltmak için
-                    title: Container(
-                      width: double.infinity,
-                      child: Text(
-                        'Renk: Mavi',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.all(0),
-                    title: Container(
-                      width: double.infinity,
-                      child: Text(
-                        'Boyutlar: 10x10 cm',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.all(0),
-                    title: Container(
-                      width: double.infinity,
-                      child: Text(
-                        'Malzeme: Plastik',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                  ListTile(
-                    contentPadding: EdgeInsets.all(0),
-                    title: Container(
-                      width: double.infinity,
-                      child: Text(
-                        'Üretim Yeri: Türkiye',
-                        textAlign: TextAlign.center,
-                      ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Özellikleri',
+                          style: TextStyle(
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 4.0),
+                        ListTile(
+                          contentPadding: EdgeInsets.all(0),
+                          title: Container(
+                            width: double.infinity,
+                            child: Column(
+                              children: ozellikler
+                                  .map((ozellik) => Text(
+                                        '${ozellik['ad']}: ${ozellik['deger']}',
+                                        textAlign: TextAlign.center,
+                                      ))
+                                  .toList(),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 8.0),
+                      ],
                     ),
                   ),
                   SizedBox(height: 8.0),
@@ -136,31 +139,50 @@ class UrunDetay extends StatelessWidget {
                     ),
                   );
                 },
-                child: Image.asset(
-                  urunFotograflari[0],
-                  fit: BoxFit.contain,
+                child: Container(
+                  margin: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 1.0),
+                  ),
+                  child: Image.asset(
+                    urunFotograflari.isNotEmpty ? urunFotograflari[0] : '',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),
 
             // Diğer Fotoğraflar
             Container(
-              height: 200.0,
+              height: 100.0,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: urunFotograflari.length,
                 itemBuilder: (context, index) {
                   if (index == 0) {
-                    // 1. numaralı resmi zaten üstte gösterdik, devam et
                     return Container();
                   }
 
-                  return Container(
-                    margin: EdgeInsets.only(right: 5, left: 5),
-                    width: MediaQuery.of(context).size.width / 3 - 10,
-                    child: Image.asset(
-                      urunFotograflari[index],
-                      fit: BoxFit.contain,
+                  return GestureDetector(
+                    onTap: () {
+                      _showGalleryForSmallImages(context, index);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        right: 5,
+                        left: 5,
+                        top: 5,
+                      ),
+                      width: MediaQuery.of(context).size.width / 3 - 10,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black, width: 1.0),
+                        ),
+                        child: Image.asset(
+                          urunFotograflari[index],
+                          fit: BoxFit.contain,
+                        ),
+                      ),
                     ),
                   );
                 },
