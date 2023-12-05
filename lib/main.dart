@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ponicio/hakkimizda.dart';
+import 'package:ponicio/iletisim.dart';
 import 'package:ponicio/urunler.dart';
 import 'dart:convert';
 
@@ -52,7 +53,13 @@ class HomePage extends StatelessWidget {
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
-                            // Yönlendirme: Contact Sayfası
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Iletisim(),
+                              ),
+                            );
+                            // Yönlendirme: Hakkımızda Sayfası
                           },
                           child: Container(
                             decoration: BoxDecoration(

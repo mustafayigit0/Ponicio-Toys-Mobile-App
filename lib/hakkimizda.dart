@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:ponicio/iletisim.dart';
 import 'package:ponicio/urunler.dart';
 
 class Hakkimizda extends StatelessWidget {
@@ -36,7 +37,13 @@ class Hakkimizda extends StatelessWidget {
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                              // Yönlendirme: Contact Sayfası
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Iletisim(),
+                                ),
+                              );
+                              // Yönlendirme: Hakkımızda Sayfası
                             },
                             child: Container(
                               decoration: BoxDecoration(

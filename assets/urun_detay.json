@@ -1,15 +1,16 @@
 [
     {
-      "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
-      "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]},
+      "urunAdi": "Grande Jeep","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+      "urunFotograflari": ["assets/images/grande1.jpg","assets/images/grande3.jpg","assets/images/grande4.jpg","assets/images/grande5.jpg","assets/images/grande6.jpg","assets/images/grande7.jpg","assets/images/grande8.jpg","assets/images/grande9.jpg","assets/images/grande10.jpg","assets/images/grande11.jpg"]},
       {
-        "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
-        "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]},
+        "urunAdi": "T-Rex Garbage","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+        "urunFotograflari": ["assets/images/copkamyonu1.jpg","assets/images/copkamyonu2.jpg","assets/images/copkamyonu3.jpg"]},
         {
-          "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
-          "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]},
+          "urunAdi": "T-Rex Truck","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+          "urunFotograflari": ["assets/images/kkamyon1.jpg","assets/images/kkamyon2.jpg","assets/images/kkamyon3.jpg"]},
           {
-            "urunAdi": "Grande Jeep Siyah","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
-            "urunFotograflari": ["assets/images/grandesiyah1.jpg","assets/images/grandesiyah2.jpg","assets/images/grandesiyah3.jpg","assets/images/grandesiyah4.jpg"]}
+            "urunAdi": "T-Rex Mixer","ozellikler": [{"ad": "Renk", "deger": "Siyah"},{"ad": "Boyutlar", "deger": "30x30 cm"},{"ad": "Malzeme", "deger": "Plastik"},{"ad": "Üretim Yeri", "deger": "Türkiye"}],
+            "urunFotograflari": ["assets/images/smikser1.jpg","assets/images/smikser2.jpg","assets/images/smikser3.jpg"]}
+           
   ]
   

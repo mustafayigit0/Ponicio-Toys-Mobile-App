@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ponicio/hakkimizda.dart';
+import 'package:ponicio/iletisim.dart';
 import 'package:ponicio/urundetay.dart';
 
 class Urunler extends StatefulWidget {
@@ -59,7 +60,11 @@ class _UrunlerState extends State<Urunler> {
                         buildButton(
                           'iletisim.png',
                           () {
-                            // Yönlendirme: Contact Sayfası
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Iletisim()),
+                            );
                           },
                         ),
                         const SizedBox(width: 5.0),
