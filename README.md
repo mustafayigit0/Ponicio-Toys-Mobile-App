@@ -1,6 +1,6 @@
 # ponicio
 
-A new Flutter project.
+Ponicio Toys Mobile App
 
 ## Getting Started
 
