@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -33,69 +35,65 @@ class _UrunlerState extends State<Urunler> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Üst kısım: Logo ve Butonlar
             Container(
               padding: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top,
-                bottom: 16.0,
+                left: 16,
+                right: 16,
               ),
-              child: Column(
+              child: Image.asset(
+                'assets/images/ponicio.png',
+                fit: BoxFit.contain,
+                height: 100,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            // Butonlar
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Logo
-                  Image.asset(
-                    'assets/images/ponicio.png',
-                    fit: BoxFit.contain,
+                  buildButton(
+                    'iletisim.png',
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Iletisim()),
+                      );
+                    },
                   ),
-                  SizedBox(height: 10.0),
-                  // Butonlar
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        buildButton(
-                          'iletisim.png',
-                          () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Iletisim()),
-                            );
-                          },
-                        ),
-                        const SizedBox(width: 5.0),
-                        buildButton(
-                          'hakkimizda.png',
-                          () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Hakkimizda()),
-                            );
-                          },
-                        ),
-                        const SizedBox(width: 5.0),
-                        buildButton(
-                          'urunler.png',
-                          () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Urunler()),
-                            );
-                          },
-                        ),
-                      ],
-                    ),
+                  const SizedBox(width: 5.0),
+                  buildButton(
+                    'hakkimizda.png',
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Hakkimizda()),
+                      );
+                    },
+                  ),
+                  const SizedBox(width: 5.0),
+                  buildButton(
+                    'urunler.png',
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Urunler()),
+                      );
+                    },
                   ),
                 ],
               ),
             ),
-
             Container(
               padding: EdgeInsets.all(10.0),
               child: FutureBuilder<List<Urun>>(
@@ -125,7 +123,6 @@ class _UrunlerState extends State<Urunler> {
                 },
               ),
             ),
-
             // Alt kısım: Metin
             Container(
               padding: EdgeInsets.all(10.0),

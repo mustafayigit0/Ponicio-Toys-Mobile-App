@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:ponicio/iletisim.dart';
@@ -9,138 +9,135 @@ class Hakkimizda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Üst kısım: Logo ve Butonlar
             Container(
               padding: EdgeInsets.only(
                 top: MediaQuery.of(context).padding.top,
-                bottom: 16.0,
+                left: 16,
+                right: 16,
               ),
-              child: Column(
+              child: Image.asset(
+                'assets/images/ponicio.png',
+                fit: BoxFit.contain,
+                height: 100,
+              ),
+            ),
+            SizedBox(height: 16.0),
+            // Butonlar
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Logo
-                  Image.asset(
-                    'assets/images/ponicio.png',
-                    fit: BoxFit.contain,
-                    // İstediğiniz yüksekliği ayarlayabilirsiniz
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Iletisim(),
+                          ),
+                        );
+                        // Yönlendirme: Hakkımızda Sayfası
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5.0),
+                          child: Image.asset(
+                            'assets/images/iletisim.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 16.0),
-                  // Butonlar
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Iletisim(),
-                                ),
-                              );
-                              // Yönlendirme: Hakkımızda Sayfası
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.0),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5.0),
-                                child: Image.asset(
-                                  'assets/images/iletisim.png',
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
+                  SizedBox(width: 5.0), // Add space between images
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Hakkimizda(),
+                          ),
+                        );
+                        // Yönlendirme: Hakkımızda Sayfası
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: Offset(0, 2),
                             ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5.0),
+                          child: Image.asset(
+                            'assets/images/hakkimizda.png',
+                            fit: BoxFit.contain,
                           ),
                         ),
-                        SizedBox(width: 5.0), // Add space between images
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Hakkimizda(),
-                                ),
-                              );
-                              // Yönlendirme: Hakkımızda Sayfası
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.0),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5.0),
-                                child: Image.asset(
-                                  'assets/images/hakkimizda.png',
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 5.0), // Add space between images
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Urunler(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: Offset(0, 2),
                             ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5.0),
+                          child: Image.asset(
+                            'assets/images/urunler.png',
+                            fit: BoxFit.contain,
                           ),
                         ),
-                        SizedBox(width: 5.0), // Add space between images
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Urunler(),
-                                ),
-                              );
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.0),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5.0),
-                                child: Image.asset(
-                                  'assets/images/urunler.png',
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-
             // Orta kısım: Hakkımızda Görseli
             Container(
               padding: EdgeInsets.all(10.0),
@@ -163,7 +160,6 @@ class Hakkimizda extends StatelessWidget {
                 ],
               ),
             ),
-
             // Alt kısım: Metin
             Container(
               padding: EdgeInsets.all(10.0),
@@ -224,9 +220,9 @@ class Hakkimizda extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+          ], // Column children
+        ), // Column
+      ), // SingleChildScrollView
+    ); // Scaffold
+  } // build
+} // Hakkimizda
